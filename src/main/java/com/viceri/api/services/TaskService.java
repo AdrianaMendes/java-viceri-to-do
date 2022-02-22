@@ -25,7 +25,7 @@ public class TaskService {
 		return repository.findById(id).orElse(null);
 	}
 
-	public void update(TaskUpdateDto dto) {
+	public void update(final TaskUpdateDto dto) {
 		TaskEntity entity = repository.findById(dto.getTaskId()).orElse(null);
 		repository.save(entity.update(dto));
 	}

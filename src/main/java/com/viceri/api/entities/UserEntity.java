@@ -11,9 +11,6 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonProperty.Access;
@@ -50,11 +47,10 @@ public final class UserEntity implements Serializable {
 	@JsonIgnore
 	private Set<TaskEntity> tasks;
 
-	public UserEntity(UserCreateDto dto) {
-		final PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+	public UserEntity(final UserCreateDto dto) {
 		id = null;
 		name = dto.getName();
 		email = dto.getEmail();
-		password = passwordEncoder.encode(dto.getPassword());
+		password = dto.getPassword();
 	}
 }
