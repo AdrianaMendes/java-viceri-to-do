@@ -25,7 +25,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "task")
 public final class TaskEntity implements Serializable {
-	
+
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -52,13 +52,13 @@ public final class TaskEntity implements Serializable {
 		description = dto.getDescription();
 		priority = dto.getPriority();
 	}
-	
+
 	public TaskEntity update(final TaskUpdateDto dto) {
 		priority = dto.getPriority();
 		description = dto.getDescription();
 		return this;
 	}
-	
+
 	public void setDone() {
 		isDone = true;
 	}

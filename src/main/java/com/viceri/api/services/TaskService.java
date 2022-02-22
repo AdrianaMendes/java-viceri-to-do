@@ -41,8 +41,7 @@ public class TaskService {
 	}
 
 	public List<TaskEntity> findNotDoneTask(final Long userId, final Priority priority) {
-		return priority == null ?
-				repository.findByUserIdAndIsDoneFalse(userId):
-				repository.findByUserIdAndIsDoneFalseAndPriority(userId, priority);
+		return priority == null ? repository.findByUserIdAndIsDoneFalse(userId)
+				: repository.findByUserIdAndIsDoneFalseAndPriority(userId, priority);
 	}
 }
