@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.viceri.api.dto.CredentialDto;
+import com.viceri.api.models.dto.CredentialDto;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

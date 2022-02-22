@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.viceri.api.dto.UserCreateDto;
-import com.viceri.api.entities.UserEntity;
+import com.viceri.api.models.dto.UserCreateDto;
+import com.viceri.api.models.entities.UserEntity;
 import com.viceri.api.services.UserService;
 
 import io.swagger.annotations.Api;

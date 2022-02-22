@@ -1,6 +1,6 @@
-package com.viceri.api.dto;
+package com.viceri.api.models.dto;
 
-import com.viceri.api.enums.Priority;
+import com.viceri.api.models.enums.Priority;
 
 import lombok.Getter;
 

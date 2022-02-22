@@ -15,10 +15,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.viceri.api.dto.TaskCreateDto;
-import com.viceri.api.dto.TaskUpdateDto;
-import com.viceri.api.entities.TaskEntity;
-import com.viceri.api.enums.Priority;
+import com.viceri.api.models.dto.TaskCreateDto;
+import com.viceri.api.models.dto.TaskUpdateDto;
+import com.viceri.api.models.entities.TaskEntity;
+import com.viceri.api.models.enums.Priority;
 import com.viceri.api.services.TaskService;
 
 import io.swagger.annotations.Api;

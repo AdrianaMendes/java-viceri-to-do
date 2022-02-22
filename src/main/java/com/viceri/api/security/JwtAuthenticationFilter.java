@@ -18,7 +18,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.viceri.api.entities.UserEntity;
+import com.viceri.api.models.entities.UserEntity;
 
 public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 	public static final int EXPIRATION_TIME_MILLISECONDS = 1000000;

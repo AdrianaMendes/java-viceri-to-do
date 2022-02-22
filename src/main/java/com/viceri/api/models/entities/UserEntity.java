@@ -1,4 +1,4 @@
-package com.viceri.api.entities;
+package com.viceri.api.models.entities;
 
 import java.io.Serializable;
 import java.util.Set;
@@ -14,7 +14,7 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonProperty.Access;
-import com.viceri.api.dto.UserCreateDto;
+import com.viceri.api.models.dto.UserCreateDto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

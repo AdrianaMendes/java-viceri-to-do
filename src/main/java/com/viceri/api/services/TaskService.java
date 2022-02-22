@@ -5,10 +5,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.viceri.api.dto.TaskCreateDto;
-import com.viceri.api.dto.TaskUpdateDto;
-import com.viceri.api.entities.TaskEntity;
-import com.viceri.api.enums.Priority;
+import com.viceri.api.models.dto.TaskCreateDto;
+import com.viceri.api.models.dto.TaskUpdateDto;
+import com.viceri.api.models.entities.TaskEntity;
+import com.viceri.api.models.enums.Priority;
 import com.viceri.api.repositories.TaskRepository;
 
 @Service

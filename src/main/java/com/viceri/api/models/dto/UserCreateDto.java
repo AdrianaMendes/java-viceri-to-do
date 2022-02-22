@@ -1,4 +1,4 @@
-package com.viceri.api.dto;
+package com.viceri.api.models.dto;
 
 import lombok.Getter;
 import lombok.Setter;

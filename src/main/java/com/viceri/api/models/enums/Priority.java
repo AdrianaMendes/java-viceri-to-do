@@ -1,4 +1,4 @@
-package com.viceri.api.enums;
+package com.viceri.api.models.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

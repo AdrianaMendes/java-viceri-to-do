@@ -1,4 +1,4 @@
-package com.viceri.api.entities;
+package com.viceri.api.models.entities;
 
 import java.io.Serializable;
 
@@ -11,9 +11,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.viceri.api.dto.TaskCreateDto;
-import com.viceri.api.dto.TaskUpdateDto;
-import com.viceri.api.enums.Priority;
+import com.viceri.api.models.dto.TaskCreateDto;
+import com.viceri.api.models.dto.TaskUpdateDto;
+import com.viceri.api.models.enums.Priority;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

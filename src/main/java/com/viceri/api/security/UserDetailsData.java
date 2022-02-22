@@ -7,7 +7,7 @@ import java.util.Optional;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.viceri.api.entities.UserEntity;
+import com.viceri.api.models.entities.UserEntity;
 
 public class UserDetailsData implements UserDetails {
 

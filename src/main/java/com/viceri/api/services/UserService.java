@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.viceri.api.dto.UserCreateDto;
-import com.viceri.api.entities.UserEntity;
+import com.viceri.api.models.dto.UserCreateDto;
+import com.viceri.api.models.entities.UserEntity;
 import com.viceri.api.repositories.UserRepository;
 
 @Service

@@ -8,7 +8,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
-import com.viceri.api.entities.UserEntity;
+import com.viceri.api.models.entities.UserEntity;
 import com.viceri.api.repositories.UserRepository;
 
 @Component
