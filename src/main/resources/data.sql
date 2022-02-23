@@ -1,5 +1,5 @@
 INSERT INTO "PUBLIC"."USER" VALUES
-(1, 'teste@email.com', STRINGDECODE('Usu\u00e1rio teste'), '$2a$10$L.GYOAc8UgljRHcJ5FTRc.5nI3vfPwvRWyfpUMqvYHiRxMzisnhri');
+(1, 'teste@email.com', STRINGDECODE('Usu\u00e1rio teste'), '$2a$10$rhpba1EAsnuzNq77UpnkreU2y0ppDwokfWdDSOz1GdbfBGPc9/iMK');
 
 INSERT INTO "PUBLIC"."TASK" VALUES
 (1, STRINGDECODE('Gerar relat\u00f3rios'), TRUE, 2, 1),

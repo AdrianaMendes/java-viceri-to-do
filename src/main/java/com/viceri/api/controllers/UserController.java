@@ -27,7 +27,7 @@ public class UserController {
 	private PasswordEncoder passwordEncoder;
 
 	@PostMapping(value = "save")
-	@ApiOperation(value = "save")
+	@ApiOperation(value = "Cadastro de um novo usuário")
 	public ResponseEntity<Void> save(@RequestBody final UserCreateDto dto) {
 		dto.setPassword(passwordEncoder.encode(dto.getPassword()));
 		service.save(dto);

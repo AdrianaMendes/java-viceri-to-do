@@ -18,7 +18,7 @@ public class JwtConfig extends WebSecurityConfigurerAdapter {
 
 	private static final String[] AUTH_WHITELIST = { "/v2/api-docs", "/swagger-resources", "/swagger-resources/**",
 			"/configuration/ui", "/configuration/security", "/swagger-ui.html", "/webjars/**", "/v3/api-docs/**",
-			"/swagger-ui/**", "/users/save" };
+			"/swagger-ui/**", "/users/save", "/h2-console/**" };
 
 	@Autowired
 	private UserDetailsServiceImpl userDetailsServiceImpl;
@@ -38,6 +38,7 @@ public class JwtConfig extends WebSecurityConfigurerAdapter {
 				.addFilter(new JwtAuthenticationFilter(authenticationManager()))
 				.addFilter(new JwtValidateFilter(authenticationManager())).sessionManagement()
 				.sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+		http.headers().frameOptions().disable();
 	}
 
 	@Bean
