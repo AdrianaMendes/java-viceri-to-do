@@ -43,9 +43,8 @@ public class TaskController {
 	}
 
 	@GetMapping(value = "find-not-done-task")
-	public ResponseEntity<List<TaskEntity>> findNotDoneTask(@RequestParam final Long userId,
-			@RequestParam(required = false) final Priority priority) {
-		return new ResponseEntity<>(service.findNotDoneTask(userId, priority), HttpStatus.OK);
+	public ResponseEntity<List<TaskEntity>> findNotDoneTask(@RequestParam(required = false) final Priority priority) {
+		return new ResponseEntity<>(service.findNotDoneTask(priority), HttpStatus.OK);
 	}
 
 	@PutMapping

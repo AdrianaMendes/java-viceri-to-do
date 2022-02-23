@@ -17,7 +17,7 @@ public class UserService {
 	public void save(final UserCreateDto dto) {
 		repository.save(new UserEntity(dto));
 	}
-	
+
 	public UserEntity getUserOnline() {
 		final String email = SecurityContextHolder.getContext().getAuthentication().getName();
 		return repository.findByEmail(email).orElse(null);

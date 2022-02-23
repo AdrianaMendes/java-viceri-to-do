@@ -45,10 +45,10 @@ public final class TaskEntity implements Serializable {
 	@JoinColumn(name = "user_id", nullable = false)
 	private UserEntity user;
 
-	public TaskEntity(final TaskCreateDto dto) {
+	public TaskEntity(final TaskCreateDto dto, final Long userId) {
 		id = null;
 		user = new UserEntity();
-		user.setId(dto.getUserId());
+		user.setId(userId);
 		description = dto.getDescription();
 		priority = dto.getPriority();
 	}

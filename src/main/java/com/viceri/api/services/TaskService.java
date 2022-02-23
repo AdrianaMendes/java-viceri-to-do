@@ -2,6 +2,8 @@ package com.viceri.api.services;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,36 +19,42 @@ public class TaskService {
 
 	@Autowired
 	private TaskRepository repository;
-	
+
 	@Autowired
 	private UserService userService;
 
 	public void save(final TaskCreateDto dto) {
-		repository.save(new TaskEntity(dto));
+		final UserEntity user = userService.getUserOnline();
+		repository.save(new TaskEntity(dto, user.getId()));
 	}
 
-	public TaskEntity findById(final Long id) {		
+	public TaskEntity findById(final Long id) {
 		final UserEntity user = userService.getUserOnline();
-		return repository.findByIdAndUserId(id, user.getId()).orElse(null);
+		return repository.findByUserIdAndId(user.getId(), id).orElse(null);
 	}
 
 	public void update(final TaskUpdateDto dto) {
-		TaskEntity entity = repository.findById(dto.getTaskId()).orElse(null);
+		final UserEntity user = userService.getUserOnline();
+		TaskEntity entity = repository.findByUserIdAndId(user.getId(), dto.getTaskId()).orElse(null);
 		repository.save(entity.update(dto));
 	}
 
 	public void taskDone(final Long id) {
-		TaskEntity entity = repository.findById(id).orElse(null);
+		final UserEntity user = userService.getUserOnline();
+		TaskEntity entity = repository.findByUserIdAndId(user.getId(), id).orElse(null);
 		entity.setDone();
 		repository.save(entity);
 	}
 
+	@Transactional
 	public void delete(final Long id) {
-		repository.deleteById(id);
+		final UserEntity user = userService.getUserOnline();
+		repository.deleteByUserIdAndId(user.getId(), id);
 	}
 
-	public List<TaskEntity> findNotDoneTask(final Long userId, final Priority priority) {
-		return priority == null ? repository.findByUserIdAndIsDoneFalse(userId)
-				: repository.findByUserIdAndIsDoneFalseAndPriority(userId, priority);
+	public List<TaskEntity> findNotDoneTask(final Priority priority) {
+		final UserEntity user = userService.getUserOnline();
+		return priority == null ? repository.findByUserIdAndIsDoneFalse(user.getId())
+				: repository.findByUserIdAndIsDoneFalseAndPriority(user.getId(), priority);
 	}
 }

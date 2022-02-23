@@ -8,5 +8,4 @@ import lombok.Getter;
 public final class TaskCreateDto {
 	private String description;
 	private Priority priority;
-	private Long userId;
 }

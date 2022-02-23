@@ -57,7 +57,7 @@ public final class UserEntity implements UserDetails {
 		email = dto.getEmail();
 		password = dto.getPassword();
 	}
-	
+
 	@JsonIgnore
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
