@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.viceri.api.models.dto.TaskCreateDto;
 import com.viceri.api.models.dto.TaskUpdateDto;
 import com.viceri.api.models.entities.TaskEntity;
+import com.viceri.api.models.entities.UserEntity;
 import com.viceri.api.models.enums.Priority;
 import com.viceri.api.repositories.TaskRepository;
 
@@ -16,13 +17,17 @@ public class TaskService {
 
 	@Autowired
 	private TaskRepository repository;
+	
+	@Autowired
+	private UserService userService;
 
 	public void save(final TaskCreateDto dto) {
 		repository.save(new TaskEntity(dto));
 	}
 
-	public TaskEntity findById(final Long id) {
-		return repository.findById(id).orElse(null);
+	public TaskEntity findById(final Long id) {		
+		final UserEntity user = userService.getUserOnline();
+		return repository.findByIdAndUserId(id, user.getId()).orElse(null);
 	}
 
 	public void update(final TaskUpdateDto dto) {

@@ -1,6 +1,7 @@
 package com.viceri.api.models.entities;
 
-import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -11,6 +12,9 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonProperty.Access;
@@ -20,12 +24,12 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @Table(name = "user")
-public final class UserEntity implements Serializable {
+@Data
+public final class UserEntity implements UserDetails {
 
 	private static final long serialVersionUID = 1L;
 
@@ -52,5 +56,47 @@ public final class UserEntity implements Serializable {
 		name = dto.getName();
 		email = dto.getEmail();
 		password = dto.getPassword();
+	}
+	
+	@JsonIgnore
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		return new ArrayList<>();
+	}
+
+	@JsonIgnore
+	@Override
+	public String getPassword() {
+		return password;
+	}
+
+	@JsonIgnore
+	@Override
+	public String getUsername() {
+		return email;
+	}
+
+	@JsonIgnore
+	@Override
+	public boolean isAccountNonExpired() {
+		return true;
+	}
+
+	@JsonIgnore
+	@Override
+	public boolean isAccountNonLocked() {
+		return true;
+	}
+
+	@JsonIgnore
+	@Override
+	public boolean isCredentialsNonExpired() {
+		return true;
+	}
+
+	@JsonIgnore
+	@Override
+	public boolean isEnabled() {
+		return true;
 	}
 }

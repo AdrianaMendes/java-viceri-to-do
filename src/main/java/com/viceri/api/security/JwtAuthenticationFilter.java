@@ -37,7 +37,7 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 			final UserEntity user = new ObjectMapper().readValue(request.getInputStream(), UserEntity.class);
 
 			return authenticationManager.authenticate(
-					new UsernamePasswordAuthenticationToken(user.getEmail(), user.getPassword(), new ArrayList<>()));
+					new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword(), new ArrayList<>()));
 
 		} catch (IOException e) {
 			throw new RuntimeException("Falha na autenticação", e);
@@ -49,7 +49,7 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 	protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain,
 			Authentication authResult) throws IOException, ServletException {
 
-		final UserDetailsData user = (UserDetailsData) authResult.getPrincipal();
+		final UserEntity user = (UserEntity) authResult.getPrincipal();
 
 		final String token = JWT.create().withSubject(user.getUsername())
 				.withExpiresAt(new Date(System.currentTimeMillis() + EXPIRATION_TIME_MILLISECONDS))
