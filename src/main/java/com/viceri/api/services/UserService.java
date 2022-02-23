@@ -1,7 +1,5 @@
 package com.viceri.api.services;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,10 +12,6 @@ public class UserService {
 
 	@Autowired
 	private UserRepository repository;
-
-	public List<UserEntity> findAll() {
-		return repository.findAll();
-	}
 
 	public void save(final UserCreateDto dto) {
 		repository.save(new UserEntity(dto));

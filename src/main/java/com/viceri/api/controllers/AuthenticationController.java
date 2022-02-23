@@ -15,8 +15,8 @@ import io.swagger.annotations.ApiOperation;
 @RestController
 @RequestMapping(value = "/", produces = MediaType.APPLICATION_JSON_VALUE)
 public class AuthenticationController {
-	@ApiOperation("Login.")
-	@PostMapping("/login")
+	@ApiOperation("Login")
+	@PostMapping(value = "/login", produces = MediaType.TEXT_PLAIN_VALUE)
 	public void fakeLogin(@RequestBody CredentialDto dto) {
 		throw new IllegalStateException(
 				"This method shouldn't be called. It's implemented by Spring Security filters.");

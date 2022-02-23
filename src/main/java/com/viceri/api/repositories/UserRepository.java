@@ -9,7 +9,5 @@ import com.viceri.api.models.entities.UserEntity;
 
 @Repository
 public interface UserRepository extends JpaRepository<UserEntity, Long> {
-
 	Optional<UserEntity> findByEmail(final String email);
-
 }
