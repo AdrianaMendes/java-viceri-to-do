@@ -1,18 +1,28 @@
 # TO-DO
 
-Presente projeto é uma aplicação backend em java spring. Foi empregado no desenvolvimento Lombok, Swagger, JWT e servidor H2. A aplicação já acompanha registros de teste.
+Este projeto é uma aplicação backend desenvolvida em Java com Spring Boot, que oferece uma API RESTful para gerenciamento de tarefas. Foram utilizadas tecnologias como Lombok, Swagger, JWT e H2 Database. A aplicação já acompanha registros de teste para facilitar a validação das funcionalidades.
 
 ## Getting Start
 
-O projeto foi organizado separando os códigos de acordo com o escopo e delegação de responsabilidade, por exemplo as classes responsáveis pelos controllers foram agrupadas, e a lógica se aplica aos demais. O Lombok foi utilizado para agilizar o desenvolvimento e reduzindo as quantidade de linhas necessárias para declarar por exemplo os getters e setters. O arquivo data.sql dentro da pasta resources realiza uma pré carga com objetivo de agilizar os testes. Os controllers foram descritos no swagger conforme os requisitos solicitado pelo documento. O token JWT foi empregado para gerenciar as sessões dos usuários. A implementação foi realizado de forma incremental consultando a documentação dos frameworks.
+O projeto segue uma arquitetura em camadas, com código organizado por responsabilidade. Foram utilizadas ferramentas como Lombok para reduzir a verbosidade, Swagger para documentação da API e JWT para autenticação. O banco de dados H2 inclui dados de teste pré-carregados via data.sql.
 
 ### Deploy
 
-![Spring Tool](img/deploy.png)
+1. Clone o repositório:
+   ```bash
+   git clone git clone https://github.com/AdrianaMendes/java-viceri-to-do.git
+   ```
+
+2. Navegue até o diretório do projeto e execute:
+   ```bash
+   ./mvnw spring-boot:run
+   ```
+
+3. Acesse o sistema em:
+   ```
+   http://localhost:8080/swagger-ui/index.html
 
 ### Swagger
-
-Para acessar a documentação swagger acesse esta URL: http://localhost:8080/swagger-ui/index.html
 
 ![Swagger](img/swagger.png)
 
@@ -22,17 +32,14 @@ Para testar o usuário já está disponível um usuário padrão no endpoint.
 
 ![Swagger](img/token-swagger.png)
 
-### H2
+# Banco de dados
 
-Para acessar o banco de dados H2: http://localhost:8080/h2-console/
-
-JDBC URL: **jdbc:h2:mem:viceri**
-
-Nome do usuário: **viceri**
-
-![Login H2](img/login-h2.png)
-
-![Console H2](img/console-h2.png)
+- O projeto utiliza o **H2 Database** em memória.
+  ```
+  http://localhost:8080/h2-console
+  ```
+  - JDBC URL: `jdbc:h2:mem:viceri`
+  - Usuário: `viceri`
 
 # Licença
 
@@ -41,8 +48,8 @@ Para mais informações acesse o arquivo :scroll: `LICENSE.md`.
 
 # Contato
 
-:email: E-Mail: ​[adrianamirianmc@gmail.com](adrianamirianmc@gmail.com)
+**Adriana Cardoso**  
+Desenvolvedora Java | Spring Boot | Angular  
 
-:clipboard: Linkedin: ​[https://www.linkedin.com/in/adriana-mirian-mendes-cardoso](https://www.linkedin.com/in/adriana-mirian-mendes-cardoso)
-
-:package: GitHub:  [https://github.com/AdrianaMendes](https://github.com/AdrianaMendes)
+- [LinkedIn](https://www.linkedin.com/in/amendescardoso/)  
+- 📧 adrianamirianmc@gmail.com
