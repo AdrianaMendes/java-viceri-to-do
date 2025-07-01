@@ -32,7 +32,7 @@ Para testar o usuário já está disponível um usuário padrão no endpoint.
 
 ![Swagger](img/token-swagger.png)
 
-# Banco de dados
+## Banco de dados
 
 - O projeto utiliza o **H2 Database** em memória.
   ```
@@ -41,12 +41,12 @@ Para testar o usuário já está disponível um usuário padrão no endpoint.
   - JDBC URL: `jdbc:h2:mem:viceri`
   - Usuário: `viceri`
 
-# Licença
+## Licença
 
 Este projeto está sob licença Apache 2.0 © 2022 Adriana Mirian Mendes Cardoso.
 Para mais informações acesse o arquivo :scroll: `LICENSE.md`.
 
-# Contato
+## Contato
 
 **Adriana Cardoso**  
 Desenvolvedora Java | Spring Boot | Angular  
