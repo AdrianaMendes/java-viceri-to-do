@@ -50,6 +50,4 @@ Para mais informações acesse o arquivo :scroll: `LICENSE.md`.
 
 **Adriana Cardoso**  
 Desenvolvedora Java | Spring Boot | Angular  
-
-- [LinkedIn](https://www.linkedin.com/in/amendescardoso/)  
 - 📧 adrianamirianmc@gmail.com
