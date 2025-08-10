@@ -43,8 +43,7 @@ Para testar o usuário já está disponível um usuário padrão no endpoint.
 
 ## Licença
 
-Este projeto está sob licença Apache 2.0 © 2022 Adriana Mirian Mendes Cardoso.
-Para mais informações acesse o arquivo :scroll: `LICENSE.md`.
+Este projeto está sob licença Apache 2.0 © 2022 Adriana Cardoso. Para mais informações acesse o arquivo :scroll: `LICENSE.md`.
 
 ## Contato
 
